@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -14,14 +16,18 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule,
+    MatGridListModule
   ],
   exports: [
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule,
+    MatGridListModule
   ]
 })
 export class SharedModule { }
