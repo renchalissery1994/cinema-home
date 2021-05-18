@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     CommonModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
@@ -23,6 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   exports: [
     MatInputModule,
     MatButtonModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,

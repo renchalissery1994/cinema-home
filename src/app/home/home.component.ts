@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     map(([user, movies]) => {
       if (!user || !movies) return [];
       this.user = user;
-      return movies.filter(movie => user.movies_liked.filter(likedMovies => likedMovies == movie.id).length > 0);
+      return movies.filter(movie => user.movies_liked.filter(likedMovies => likedMovies == movie.id).length > 0); // Filter the movies liked by the user
     })
   );
 

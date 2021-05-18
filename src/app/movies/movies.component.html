@@ -10,6 +10,10 @@
                     {{movie.title}}
                 </mat-panel-title>
             </mat-expansion-panel-header>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" [(ngModel)]="movie.title">
+            </mat-form-field>
             <p>Year: {{movie.year}}</p>
             <p>Cast: {{movie.cast}}</p>
             <button mat-raised-button (click)="likeMovie(movie)">Like</button>
@@ -23,7 +27,10 @@
         <mat-grid-list cols="4" rowHeight="2:1">
             <mat-grid-tile class="box-view" *ngFor="let movie of moviesLiked">
                 <div>
-                    <p>Title: {{movie.title}}</p>
+                    <mat-form-field>
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Title" [(ngModel)]="movie.title">
+                    </mat-form-field>
                     <p>Year: {{movie.year}}</p>
                     <p>Cast: {{movie.cast}}</p>
                 </div>
