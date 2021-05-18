@@ -1,2 +1,3 @@
 <h1>Cinema Home</h1>
+<button *ngIf="user$ | async" mat-raised-button (click)="logout()">Logout</button>
 <router-outlet></router-outlet>

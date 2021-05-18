@@ -11,11 +11,16 @@ export class LoginGuard implements CanActivate {
 
     constructor(private appService: AppService, private router: Router) { }
 
-    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-        return this.appService.user$.pipe(
-            map(user => user != null),
-            tap(isValid => !isValid && this.router.navigate(['login'])) // Redirect to login page is the user is not logged in
-        );
+    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        // Check the session storage for logged in user
+        let userString = sessionStorage.getItem("user");
+        if (userString) {
+            let user = JSON.parse(sessionStorage.getItem("user")); // Convert user JSON from string to object
+            this.appService.setLoggedInUser(user); // Set the user in the application cache
+            return true;
+        }
+        this.router.navigate(['login']); // Navigate to login page if the user is not logged in
+        return false;
     }
 
 }

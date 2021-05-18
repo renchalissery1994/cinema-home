@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppService } from '../app.service';
 import { Cinema } from '../models/cinema';
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   moviesLiked$ = combineLatest([this.appService.user$, this.appService.getCinemas(), this.appService.getMovies()]).pipe(
     map(([user, cinemas, movies]) => {
+      if (!user) return of([]);
       this.user = user;
       this.cinema = cinemas.filter(cinema => cinema.id == user.cinema)[0];
       return movies.filter(movie => user.movies_liked.filter(likedMovies => likedMovies == movie.id).length > 0);
