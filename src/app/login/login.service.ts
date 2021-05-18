@@ -8,8 +8,11 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
-    users$ = this.http.get<User[]>(environment.apiUrl + '/users');
-
     constructor(private http: HttpClient) { }
+
+    // Get all users
+    getUsers() {
+        return this.http.get<User[]>(environment.apiUrl + '/users');
+    }
 
 }
