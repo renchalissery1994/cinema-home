@@ -1,4 +1,3 @@
-<h2>Movies Liked</h2>
 <div *ngIf="moviesLiked$ | async as moviesLiked">
     <mat-accordion>
         <mat-expansion-panel *ngFor="let movie of moviesLiked">

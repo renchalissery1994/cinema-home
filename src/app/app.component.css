@@ -1,6 +1,30 @@
 .header {
-    background: #4188ff;
+    background: #003554;
     color: white;
     text-align: center;
     padding: 20px;
+    margin: 0;
+}
+
+.nav-bar {
+    background:#005687;
+    padding: 10px;
+    text-align: center;
+    height: 37px;
+}
+
+.nav-item {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 25px;
+    line-height: 30px;
+}
+
+.active {
+    color: #8ad4ff;
+  }
+
+.logout {
+    float: right;
 }
