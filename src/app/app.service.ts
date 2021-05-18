@@ -14,6 +14,12 @@ export class AppService {
     private userBehaviorSubject: BehaviorSubject<User> = new BehaviorSubject<User>(null);
     user$ = this.userBehaviorSubject.asObservable()
 
+    private moviesBehaviorSubject: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>(null);
+    movies$ = this.moviesBehaviorSubject.asObservable()
+
+    private cenemasBehaviorSubject: BehaviorSubject<Cinema[]> = new BehaviorSubject<Cinema[]>(null);
+    cenemas$ = this.cenemasBehaviorSubject.asObservable()
+
     constructor(private http: HttpClient) { }
 
     // Get all users
@@ -21,12 +27,12 @@ export class AppService {
         return this.http.get<User[]>(environment.apiUrl + '/users');
     }
     // Get all cinemas
-    getCinemas(): Observable<Cinema[]> {
-        return this.http.get<Cinema[]>(environment.apiUrl + '/cinemas');
+    getCinemas(){
+        return this.http.get<Cinema[]>(environment.apiUrl + '/cinemas').subscribe(cinemas=>this.cenemasBehaviorSubject.next(cinemas));
     }
     // Get all movies
-    getMovies(): Observable<Movie[]> {
-        return this.http.get<Movie[]>(environment.apiUrl + '/movies');
+    getMovies() {
+        this.http.get<Movie[]>(environment.apiUrl + '/movies').subscribe(movies=>this.moviesBehaviorSubject.next(movies));
     }
 
     // Set the logged in user
@@ -35,8 +41,12 @@ export class AppService {
         sessionStorage.setItem('user', JSON.stringify({ ...user, password: undefined })); // Store the user in session storage without password
     }
 
-    updateUserDetails(user: User) {
+    updateUser(user: User) {
         this.userBehaviorSubject.next(user);
+    }
+
+    updateMovies(movies: Movie[]) {
+        this.moviesBehaviorSubject.next(movies);
     }
 
     logout() {

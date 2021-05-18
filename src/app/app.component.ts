@@ -14,7 +14,11 @@ export class AppComponent {
   constructor(private appService: AppService, private router: Router) {
     // Reset the application cache when the page reloads
     let user = JSON.parse(sessionStorage.getItem("user")); // Convert user JSON from string to object
-    if (user) this.appService.setLoggedInUser(user); // Set the user in the application cache
+    if (user) {
+      this.appService.setLoggedInUser(user); // Set the user in the application cache
+      this.appService.getMovies();
+      this.appService.getCinemas();
+    }
   }
 
   logout() {

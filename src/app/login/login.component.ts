@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
       if (validUser) {
         snackBarRef = this.snackBar.open("Login Successfull", "Close");
         this.appService.setLoggedInUser(validUser); // Set the logged in user
+        this.appService.getMovies();
+        this.appService.getCinemas();
         this.router.navigate(['/home']);
       } else {
         snackBarRef = this.snackBar.open("Invalid User", "Close");
