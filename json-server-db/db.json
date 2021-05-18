@@ -1,0 +1,34 @@
+{
+	"users": [
+	{
+		"id": "1e1a7a36a4ac4173a7a0301b77d9631d",
+		"name": "John",
+		"login": "jtest",
+		"password": "jtest1",
+		"cinema": "bf2ed92d332b45ddb591c89a5a6a4646",
+		"movies_liked": [
+			"1e1a7a36a4ac4173a7a0301b77d9631c", "7bd27f8abe7f4ee79e1c94871a3bfe35", "c57a09e952bf4767a25acad4e0749c23"
+		]
+	},
+	{
+		"id": "1e1a7a36a4ac4173a7a0301b77d9631e",
+		"name": "Sara",
+		"login": "stest",
+		"password": "stest1",
+		"cinema": "bf2ed92d332b45ddb591c89a5a6a4646",
+		"movies_liked": [
+			"796627d80a7e4965bf5d11ffa8f45ad9", "c57a09e952bf4767a25acad4e0749c23", "c57a09e952bf4767a25acad4e0749c23"
+		]
+	},
+	{
+		"id": "1e1a7a36a4ac4173a7a0301b77d9631f",
+		"name": "Pocahontas",
+		"login": "ptest",
+		"password": "ptest1",
+		"cinema": "752d113ba36d4d2f8347cdd38458ff90",
+		"movies_liked": [
+			"36dbd9e080df40e9b52e97b5aab92f80", "496ed06217de4c639091066f0006726a", "56ca2a6faa4b4b4fa49353ba2c82bffe"
+		]
+	}
+]
+}
