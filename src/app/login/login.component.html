@@ -1,13 +1,15 @@
-<h2>Login</h2>
-<form [formGroup]="loginForm">
-    <mat-form-field>
-        <mat-label>User Name</mat-label>
-        <input matInput placeholder="User Name" formControlName="username">
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" formControlName="password">
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" (click)="login()">Login</button>
-</form>
+<div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm">
+        <mat-form-field>
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="User Name" formControlName="username">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" (click)="login()">Login</button>
+    </form>
+</div>

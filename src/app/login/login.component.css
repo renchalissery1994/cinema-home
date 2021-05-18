@@ -1,0 +1,11 @@
+.login-box{
+    margin: 200px auto;
+    width: 240px;
+    height: 200px;
+    background: #deeaff;
+    padding: 20px;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 177px 4px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 0px 177px 4px rgba(0,0,0,0.31);
+box-shadow: 0px 0px 177px 4px rgba(0,0,0,0.31);
+}
