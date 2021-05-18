@@ -35,6 +35,10 @@ export class AppService {
         sessionStorage.setItem('user', JSON.stringify({ ...user, password: undefined })); // Store the user in session storage without password
     }
 
+    updateUserDetails(user: User) {
+        this.userBehaviorSubject.next(user);
+    }
+
     logout() {
         sessionStorage.clear(); // Clear user from session storage
         this.userBehaviorSubject.next(null); // Clear user from application cache

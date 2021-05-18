@@ -1,9 +1,6 @@
 <h2>Movies Liked</h2>
 <div *ngIf="moviesLiked$ | async as moviesLiked">
-
-    <!-- List View -->
-    <mat-accordion *ngIf="cinema.name=='Westworld Cinemas'; else sunshineCinemas">
-        <h3>{{cinema.name}}</h3>
+    <mat-accordion>
         <mat-expansion-panel *ngFor="let movie of moviesLiked">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -15,19 +12,4 @@
             <button mat-raised-button (click)="unlikeMovie(movie)">Unlike</button>
         </mat-expansion-panel>
     </mat-accordion>
-
-    <!-- Box View -->
-    <ng-template #sunshineCinemas>
-        <h3>{{cinema.name}}</h3>
-        <mat-grid-list cols="2" rowHeight="2:1" [style.width.px]="800">
-            <mat-grid-tile class="box-view" *ngFor="let movie of moviesLiked">
-                <div>
-                    <p>Title: {{movie.title}}</p>
-                    <p>Year: {{movie.year}}</p>
-                    <p>Cast: {{movie.cast}}</p>
-                </div>
-                <button mat-raised-button (click)="unlikeMovie(movie)">Unlike</button>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </ng-template>
 </div>

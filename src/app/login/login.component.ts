@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       } else {
         snackBarRef = this.snackBar.open("Invalid User", "Close");
       }
-      setTimeout(()=>this.snackBar.dismiss(), 2000); // Close snack bar after 2 seconds
+      setTimeout(()=>this.snackBar.dismiss(), 1000); // Close snack bar after 1 seconds
       snackBarRef.onAction().subscribe(() => this.snackBar.dismiss()); // Snack Bar action on close
     });
   }
